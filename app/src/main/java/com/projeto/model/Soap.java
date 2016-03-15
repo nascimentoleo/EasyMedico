@@ -5,16 +5,22 @@ package com.projeto.model;
  */
 public class Soap {
     private String nome;
-    private String url;
+    private String ip;
+    private String porta;
+    private String path;
     private String namespace;
 
-    public Soap(String nome, String url, String namespace) {
+    public Soap(String nome, String ip) {
         this.nome = nome;
-        this.url = url;
-        this.namespace = namespace;
+        this.path = "easyMedicoWS/services";
+        this.namespace = "http://easymedicows.com.br";
+        this.ip = ip;
+        this.porta = "8080";
     }
 
     public String getEndereco(){
-       return null;
+       return this.ip  + ":" + this.porta + "/" + this.path + "/" + this.nome + "?wsdl";
     }
+
+
 }
