@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Easy Medico</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="sou_paciente">Sou paciente</string>
+    <string name="sou_medico">Sou médico</string>
+    <string name="title_activity_activity_paciente">ActivityPaciente</string>
+    <string name="title_activity_activity_medico">ActivityMedico</string>
+    <string name="cadastrar_medico">Cadastrar Médico</string>
+    <string name="realizar_login">Realizar login</string>
+    <string name="title_activity_activity_login_medico">ActivityLoginMedico</string>
+    <string name="usuario">Usuário</string>
+    <string name="senha">Senha</string>
+    <string name="title_activity_activity_cadastrar_medico">ActivityCadastrarMedico</string>
+    <string name="nome">Nome</string>
+    <string name="especialidade">Especialidade</string>
+    <string name="ordem_de_chegada">Ordem de Chegada</string>
+    <string name="hora_marcada">Hora Marcada</string>
+    <string name="quantidade_de_pacientes_por_dia">Quantidade de pacientes por dia</string>
+    <string name="quantidade_de_pacientes_por_hora">Quantidade de pacientes por hora</string>
+    <string name="cadastrar">Cadastrar</string>
+    <string name="login">Login</string>
+    <string name="ativar_localizaco">Ativar localização</string>
+    <string name="ativar_localizacao">Ativar localização</string>
+    <string name="title_activity_activity_agendamento">ActivityAgendamento</string>
+    <string name="agendar">Agendar</string>
+    <string name="title_activity_activity_paciente_agendamentos">ActivityPacienteAgendamentos</string>
+    <string name="agendamentos">Agendamentos</string>
+    <string name="medicos_disponiveis">Médicos Disponíveis</string>
+    <string name="seus_agendamentos">Seus Agendamentos</string>
+    <string name="cadastre_se">Cadastre-se</string>
+    <string name="agendamento">Agendamento</string>
+    <string name="remover">Remover</string>
+    <string name="crm">CRM</string>
+    
+</resources>

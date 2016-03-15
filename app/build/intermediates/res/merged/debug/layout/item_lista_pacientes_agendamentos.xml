@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.exemplo.meuprojeto07.Principal" >
+
+    <TextView
+        android:id="@+id/txtNomeMedico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Médico: " />
+    
+     <TextView
+        android:id="@+id/txtNomePaciente"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Paciente: " />
+
+    <TextView
+        android:id="@+id/txtEspecialidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Especialidade: " />
+
+    <TextView
+        android:id="@+id/txtData"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Data: " />
+
+    <TextView
+        android:id="@+id/txtHora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora: " />
+     <TextView
+        android:id="@+id/txtTelefone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Telefone: " />
+
+</LinearLayout>
