@@ -20,13 +20,6 @@ import com.projeto.model.Soap;
 
 public class AgendamentoDAO {
 
-	private Soap soap;
-
-	public AgendamentoDAO(Soap soap) {
-		this.soap = soap;
-
-	}
-
 	private static final String URL = "http://192.168.0.116:8080/easyMedicoWS/services/AgendamentoDAO?wsdl";
 	private static final String NAMESPACE = "http://easymedicows.com.br";
 	private static final String INSERIR = "inserirAgendamento";
