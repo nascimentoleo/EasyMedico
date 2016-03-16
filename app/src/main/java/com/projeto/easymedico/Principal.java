@@ -47,17 +47,30 @@ public class Principal extends Activity implements HostDialogFragment.AoSalvarHo
 	}
 	
 	public void EventoBotaoMedico(View v){
-		Intent itLoginMedico = new Intent(this, ActivityLoginMedico.class);
-		startActivity(itLoginMedico);
+		if (this.existeHostCadastrado()){
+			Intent itLoginMedico = new Intent(this, ActivityLoginMedico.class);
+			startActivity(itLoginMedico);
+		}
 	}
 	
 	public void EventoBotaoPaciente(View v){
-		Intent itPaciente = new Intent(this, ActivityPaciente.class);
-		startActivity(itPaciente);
+		if (this.existeHostCadastrado()){
+			Intent itPaciente = new Intent(this, ActivityPaciente.class);
+			startActivity(itPaciente);
+		}
+
 	}
 
 	@Override
 	public void salvouHost(Host host) {
 		this.host = host;
+	}
+
+	private boolean existeHostCadastrado(){
+		boolean existeHost = this.host != null;
+		if (!existeHost)
+			Toast.makeText(this, "Faltou cadastrar o host", Toast.LENGTH_SHORT).show();
+		return existeHost;
+
 	}
 }
