@@ -81,24 +81,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Principal.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Principal.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/Principal.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4878049">
-              <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
               <folding>
-                <element signature="e#2240#2241#0" expanded="true" />
-                <element signature="e#2258#2259#0" expanded="true" />
+                <element signature="e#2233#2234#0" expanded="true" />
+                <element signature="e#2251#2252#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActivityCadastrarMedico.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Host.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/model/Host.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ActivityCadastrarMedico.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityCadastrarMedico.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.321428">
-              <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
+            <state vertical-scroll-proportion="1.097561">
+              <caret line="88" column="93" selection-start-line="88" selection-start-column="93" selection-end-line="88" selection-end-column="93" />
               <folding />
             </state>
           </provider>
@@ -2003,7 +2013,6 @@
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_login_medico.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_medico.xml" />
         <option value="$PROJECT_DIR$/app/src/main/res/menu/activity_paciente.xml" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/model/Host.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/model/Bundle.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/model/IdBundle.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/fragment/HostDialogFragment.java" />
@@ -2012,11 +2021,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/control/Login.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityLoginMedico.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/control/CadastroDeMedicos.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityCadastrarMedico.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/adapter/PacienteAgendamentoAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityPacienteAgendamentos.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/control/BuscarMedicoTask.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/model/Host.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/Principal.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityCadastrarMedico.java" />
       </list>
     </option>
   </component>
@@ -2513,8 +2523,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2043#2044#0" expanded="true" />
-            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2567,8 +2577,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#2043#2044#0" expanded="true" />
-            <element signature="e#2208#2209#0" expanded="true" />
+            <element signature="e#2036#2037#0" expanded="true" />
+            <element signature="e#2201#2202#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -2808,17 +2818,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/model/Host.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.16260162">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding>
-            <element signature="e#448#449#0" expanded="true" />
-            <element signature="e#488#489#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/model/IdBundle.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.52845526">
@@ -2872,14 +2871,6 @@
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityCadastrarMedico.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.321428">
-          <caret line="85" column="39" selection-start-line="85" selection-start-column="39" selection-end-line="85" selection-end-column="39" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -2939,14 +2930,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/model/Host.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/Principal.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4878049">
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="43" selection-end-line="27" selection-end-column="43" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
           <folding>
-            <element signature="e#2240#2241#0" expanded="true" />
-            <element signature="e#2258#2259#0" expanded="true" />
+            <element signature="e#2233#2234#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/com/projeto/easymedico/ActivityCadastrarMedico.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.097561">
+          <caret line="88" column="93" selection-start-line="88" selection-start-column="93" selection-end-line="88" selection-end-column="93" />
+          <folding />
         </state>
       </provider>
     </entry>

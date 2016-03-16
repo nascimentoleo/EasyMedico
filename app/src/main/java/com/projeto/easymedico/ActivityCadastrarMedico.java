@@ -84,9 +84,9 @@ public class ActivityCadastrarMedico extends Activity {
 
 		try {
 			if(cadastroDeMedicos.cadastrar(novoMedico,Principal.getHost()))
-				Toast.makeText(this,"Médico Cadastrado!",Toast.LENGTH_SHORT);
+				Toast.makeText(this,"Médico Cadastrado!",Toast.LENGTH_SHORT).show();
 			else
-				Toast.makeText(this,cadastroDeMedicos.getMsgErro(),Toast.LENGTH_SHORT);
+				Toast.makeText(this,cadastroDeMedicos.getMsgErro(),Toast.LENGTH_SHORT).show();
 
 			finish();
 		} catch (InterruptedException e) {
