@@ -41,6 +41,7 @@ public class ActivityPaciente extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_paciente);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		mapaFragmento = ((MapFragment) getFragmentManager().findFragmentById(
 				R.id.mapaFragmento)).getMap();
 		// Passo a refer�ncia do mapa e digo que o zoom ser� autom�tico

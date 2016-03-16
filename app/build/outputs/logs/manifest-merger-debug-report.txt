@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:2:1-79:12
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:2:1-85:12
 	package
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:3:5-37
 		INJECTED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml
@@ -219,7 +219,7 @@ MERGED from [com.google.android.gms:play-services-maps:8.4.0] /home/leo/StudioPr
 	android:required
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:28:9-32
 application
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:30:5-77:19
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:30:5-83:19
 MERGED from [com.android.support:support-v4:23.2.1] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.2.1/AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services/8.4.0/AndroidManifest.xml:19:5-20
 MERGED from [com.google.android.gms:play-services-ads:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/AndroidManifest.xml:24:5-32:19
@@ -340,49 +340,61 @@ ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:
 	android:name
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:41:27-74
 activity#com.projeto.easymedico.ActivityPaciente
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:44:9-47:20
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:44:9-48:20
 	android:label
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:46:13-56
+	android:parentActivityName
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:47:13-52
 	android:name
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:45:13-45
 activity#com.projeto.easymedico.ActivityMedico
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:48:9-51:20
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:49:9-53:20
 	android:label
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:50:13-54
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:51:13-54
+	android:parentActivityName
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:52:13-62
 	android:name
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:49:13-43
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:50:13-43
 activity#com.projeto.easymedico.ActivityLoginMedico
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:52:9-55:20
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:54:9-58:20
 	android:label
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:54:13-42
-	android:name
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:53:13-48
-activity#com.projeto.easymedico.ActivityCadastrarMedico
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:56:9-59:20
-	android:label
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:58:13-48
-	android:name
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:56:13-42
+	android:parentActivityName
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:57:13-52
-activity#com.projeto.easymedico.ActivityAgendamento
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:60:9-63:20
-	android:label
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:62:13-48
 	android:name
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:55:13-48
+activity#com.projeto.easymedico.ActivityCadastrarMedico
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:59:9-63:20
+	android:label
 		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:61:13-48
-activity#com.projeto.easymedico.ActivityPacienteAgendamentos
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:64:9-67:20
+	android:parentActivityName
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:62:13-52
+	android:name
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:60:13-52
+activity#com.projeto.easymedico.ActivityAgendamento
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:64:9-68:20
 	android:label
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:66:13-54
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:66:13-48
+	android:parentActivityName
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:67:13-59
 	android:name
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:65:13-57
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:65:13-48
+activity#com.projeto.easymedico.ActivityPacienteAgendamentos
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:69:9-73:20
+	android:label
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:71:13-54
+	android:parentActivityName
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:72:13-59
+	android:name
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:70:13-57
 meta-data#com.google.android.geo.API_KEY
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:69:9-71:71
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:75:9-77:71
 	android:value
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:71:13-68
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:77:13-68
 	android:name
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:70:13-58
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:76:13-58
 meta-data#com.google.android.gms.version
-ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:72:9-74:69
+ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:78:9-80:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
@@ -415,9 +427,9 @@ MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/Stud
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 MERGED from [com.google.android.gms:play-services-basement:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-basement/8.4.0/AndroidManifest.xml:21:9-23:69
 	android:value
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:74:13-66
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:80:13-66
 	android:name
-		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:73:13-58
+		ADDED from /home/leo/StudioProjects/EasyMedico/app/src/main/AndroidManifest.xml:79:13-58
 activity#com.google.android.gms.ads.AdActivity
 ADDED from [com.google.android.gms:play-services-ads:8.4.0] /home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-ads/8.4.0/AndroidManifest.xml:26:9-29:64
 	android:configChanges

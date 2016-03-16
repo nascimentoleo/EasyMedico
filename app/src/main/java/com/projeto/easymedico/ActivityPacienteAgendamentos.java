@@ -26,6 +26,7 @@ public class ActivityPacienteAgendamentos extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_paciente_agendamentos);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.listaPacientesAgendamentos = (ListView) findViewById(R.id.listaPacientesAgendamentos);
 		this.listaPacientesAgendamentos.setOnItemClickListener(this);
 		this.imei = getIntent().getExtras().getString("imei");

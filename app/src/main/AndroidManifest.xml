@@ -43,27 +43,33 @@
         </activity>
         <activity
             android:name=".ActivityPaciente"
-            android:label="@string/medicos_disponiveis" >
+            android:label="@string/medicos_disponiveis"
+            android:parentActivityName=".Principal">
         </activity>
         <activity
             android:name=".ActivityMedico"
-            android:label="@string/seus_agendamentos" >
+            android:label="@string/seus_agendamentos"
+            android:parentActivityName=".ActivityLoginMedico">
         </activity>
         <activity
             android:name=".ActivityLoginMedico"
-            android:label="@string/login" >
+            android:label="@string/login"
+            android:parentActivityName=".Principal">
         </activity>
         <activity
             android:name=".ActivityCadastrarMedico"
-            android:label="@string/cadastre_se" >
+            android:label="@string/cadastre_se"
+            android:parentActivityName=".Principal">
         </activity>
         <activity
             android:name=".ActivityAgendamento"
-            android:label="@string/agendamento" >
+            android:label="@string/agendamento"
+            android:parentActivityName=".ActivityPaciente">
         </activity>
         <activity
             android:name=".ActivityPacienteAgendamentos"
-            android:label="@string/seus_agendamentos" >
+            android:label="@string/seus_agendamentos"
+            android:parentActivityName=".ActivityPaciente">
         </activity>
 
         <meta-data

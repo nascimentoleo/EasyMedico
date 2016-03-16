@@ -3,11 +3,6 @@
     tools:context="com.projeto.easymedico.ActivityAgendamento" >
 
     <item
-        android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/action_settings"/>
-    <item
         android:id="@+id/action_remover"
         android:orderInCategory="100"
         android:showAsAction="ifRoom"

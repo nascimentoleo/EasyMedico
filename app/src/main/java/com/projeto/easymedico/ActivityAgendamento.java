@@ -43,6 +43,7 @@ public class ActivityAgendamento extends Activity implements
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_agendamento);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.edNomePaciente = (EditText) findViewById(R.id.edNomePaciente);
 		this.edDataAgendamento = (EditText) findViewById(R.id.edDataAgendamento);
 		this.edTelefone = (EditText) findViewById(R.id.edTelefone);

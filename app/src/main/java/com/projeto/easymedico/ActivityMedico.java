@@ -38,6 +38,7 @@ public class ActivityMedico extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_medico);
+		getActionBar().setDisplayHomeAsUpEnabled(true);
 		Bundle parametros = this.getIntent().getExtras();
 		this.medico = (Medico) parametros.getSerializable("medico");
 		this.edDataBuscaAgendamento = (EditText) findViewById(R.id.edDataBuscaAgendamento);

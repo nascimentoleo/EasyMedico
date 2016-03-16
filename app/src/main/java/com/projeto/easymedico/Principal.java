@@ -18,7 +18,9 @@ import com.projeto.model.Host;
 
 public class Principal extends Activity implements HostDialogFragment.AoSalvarHost {
 
-	private Host host;
+	private static Host host = null;
+
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
