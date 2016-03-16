@@ -268,7 +268,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="accept">Accept</string>
-    <string name="action_settings">Settings</string>
+    <string name="action_settings">Configuração</string>
     <string name="agendamento">Agendamento</string>
     <string name="agendamentos">Agendamentos</string>
     <string name="agendar">Agendar</string>
@@ -316,7 +316,9 @@
     <string name="create_calendar_title">Create calendar event</string>
     <string name="crm">CRM</string>
     <string name="decline">Decline</string>
+    <string name="endereco_host">Endereço do host</string>
     <string name="especialidade">Especialidade</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="hello_world">Hello world!</string>
     <string name="hora_marcada">Hora Marcada</string>
     <string name="login">Login</string>

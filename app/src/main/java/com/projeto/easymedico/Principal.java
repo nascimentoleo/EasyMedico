@@ -13,8 +13,12 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
-public class Principal extends Activity {
+import com.projeto.fragment.HostDialogFragment;
+import com.projeto.model.Host;
 
+public class Principal extends Activity implements HostDialogFragment.AoSalvarHost {
+
+	private Host host;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -36,7 +40,8 @@ public class Principal extends Activity {
 		// as you specify a parent activity in AndroidManifest.xml.
 		int id = item.getItemId();
 		if (id == R.id.action_settings) {
-			this.buildAlertHost();
+			HostDialogFragment hostDialogFragment = HostDialogFragment.newInstance(null);
+			hostDialogFragment.abrir(getFragmentManager());
 		}
 		return super.onOptionsItemSelected(item);
 	}
@@ -51,22 +56,8 @@ public class Principal extends Activity {
 		startActivity(itPaciente);
 	}
 
-	private void buildAlertHost(){
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setTitle("Host");
-		builder.setMessage("Insira o endereço IP");
-		final EditText input = new EditText(this);
-		builder.setNeutralButton("OK", new DialogInterface.OnClickListener() {
-
-			public void onClick(DialogInterface dialog, int which) {
-
-				Toast.makeText(getApplicationContext(), input.getText().toString().trim(),
-						Toast.LENGTH_SHORT).show();
-			}
-
-		});
-		builder.show();
-		InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
-		imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
+	@Override
+	public void salvouHost(Host host) {
+		this.host = host;
 	}
 }

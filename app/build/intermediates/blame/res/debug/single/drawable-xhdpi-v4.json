@@ -116,16 +116,16 @@
         "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_google_signin_btn_text_dark_focused.9.png"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_0_mono_dark.png",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_on_0_mono_dark.png"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/common_plus_signin_btn_text_dark_pressed.9.png",
         "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_text_dark_pressed.9.png"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_media_route_on_0_mono_dark.png",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/res/drawable-xhdpi/ic_media_route_on_0_mono_dark.png"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_cut_mtrl_alpha.png",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_cut_mtrl_alpha.png"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_on_1_light.png",
@@ -152,12 +152,12 @@
         "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/res/drawable-xhdpi/common_plus_signin_btn_icon_dark_normal.9.png"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_selectall_mtrl_alpha.png"
-    },
-    {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_list_pressed_holo_light.9.png",
         "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_list_pressed_holo_light.9.png"
+    },
+    {
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/abc_ic_menu_selectall_mtrl_alpha.png",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/drawable-xhdpi/abc_ic_menu_selectall_mtrl_alpha.png"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/drawable-xhdpi-v4/ic_cast_light.png",
