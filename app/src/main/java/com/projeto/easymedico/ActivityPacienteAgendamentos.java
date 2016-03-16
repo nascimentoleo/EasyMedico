@@ -77,7 +77,7 @@ public class ActivityPacienteAgendamentos extends Activity implements
 		if(!this.imei.equals("")){
 			LinkedList<Agendamento> listaAgendamentos = AgendamentoDAO.getAgendamentosPorIMEI(this.imei);
 			if(listaAgendamentos != null){
-				PacienteAgendamentoAdapter adapter = new PacienteAgendamentoAdapter(this, listaAgendamentos);
+				PacienteAgendamentoAdapter adapter = new PacienteAgendamentoAdapter(this,listaAgendamentos, Principal.getHost());
 				this.listaPacientesAgendamentos.setAdapter(adapter);
 			}else{
 				Toast.makeText(this, "Não existem agendamentos", Toast.LENGTH_SHORT).show();

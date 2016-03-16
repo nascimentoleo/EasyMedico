@@ -5,6 +5,7 @@ import java.util.LinkedList;
 import com.projeto.db.MedicoDAO;
 import com.projeto.easymedico.R;
 import com.projeto.model.Agendamento;
+import com.projeto.model.Host;
 import com.projeto.model.Medico;
 
 import android.content.Context;
@@ -17,11 +18,13 @@ import android.widget.TextView;
 public class PacienteAgendamentoAdapter extends BaseAdapter {
 	private Context ctx;
 	private LinkedList<Agendamento> listaAgendamentos;
+	private Host host;
 
 	public PacienteAgendamentoAdapter(Context ctx,
-			LinkedList<Agendamento> agendamento) {
+			LinkedList<Agendamento> agendamento, Host host) {
 		this.listaAgendamentos = agendamento;
 		this.ctx = ctx;
+		this.host = host;
 	}
 
 	@Override
@@ -49,8 +52,9 @@ public class PacienteAgendamentoAdapter extends BaseAdapter {
 		// View
 		View itemLista = LayoutInflater.from(ctx).inflate(
 				R.layout.item_lista_pacientes_agendamentos, null);
-		// Pego o médico referente a esse agendamento
-		Medico medico = MedicoDAO.getMedicoByUser(agendamento.getUser());
+		// Pego o mï¿½dico referente a esse agendamento
+		MedicoDAO medicoDAO = new MedicoDAO(this.host);
+		Medico medico = medicoDAO.getMedicoByUser(agendamento.getUser());
 		if (medico != null) {
 			TextView txtNomeMedico = (TextView) itemLista
 					.findViewById(R.id.txtNomeMedico);

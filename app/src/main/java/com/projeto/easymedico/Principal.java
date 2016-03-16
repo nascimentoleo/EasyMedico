@@ -19,11 +19,13 @@ import com.projeto.model.IdBundle;
 
 public class Principal extends Activity implements HostDialogFragment.AoSalvarHost {
 
-    private static Bundle bundleHost;
+    private static Host host;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_principal);
+		host = new Host("http://192.168.0.116");
 		
 	}
 
@@ -64,15 +66,18 @@ public class Principal extends Activity implements HostDialogFragment.AoSalvarHo
 
 	@Override
 	public void salvouHost(Host host) {
-		this.bundleHost = new Bundle();
-		this.bundleHost.putSerializable(IdBundle.HOST.getId(), host);
+		this.host = host;
 	}
 
 	private boolean existeHostCadastrado(){
-		boolean existeHost = this.bundleHost.getSerializable(IdBundle.HOST.getId()) != null;
+		boolean existeHost = this.host != null;
 		if (!existeHost)
 			Toast.makeText(this, "Faltou cadastrar o host", Toast.LENGTH_SHORT).show();
 		return existeHost;
 
+	}
+
+	public static Host getHost(){
+		return host;
 	}
 }

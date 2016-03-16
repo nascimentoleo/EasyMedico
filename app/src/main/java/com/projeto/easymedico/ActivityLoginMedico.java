@@ -1,6 +1,8 @@
 package com.projeto.easymedico;
 
 import com.projeto.control.Login;
+import com.projeto.model.Host;
+import com.projeto.model.IdBundle;
 import com.projeto.model.Medico;
 
 import android.app.Activity;
@@ -11,6 +13,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import static com.projeto.easymedico.Principal.*;
 
 public class ActivityLoginMedico extends Activity {
 
@@ -56,7 +60,7 @@ public class ActivityLoginMedico extends Activity {
 		if (!edLoginUser.getText().toString().equals("")) {
 			if (!edLoginPassword.getText().toString().equals("")) {
 				Medico medico = login.realizarLogin(edLoginUser.getText()
-						.toString(), edLoginPassword.getText().toString());
+						.toString(), edLoginPassword.getText().toString(), Principal.getHost());
 				if (medico != null) {
 					Toast.makeText(this, "Bem vindo " + medico.getNome(),
 							Toast.LENGTH_SHORT).show();

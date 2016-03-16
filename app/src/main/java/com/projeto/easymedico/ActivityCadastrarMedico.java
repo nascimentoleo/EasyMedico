@@ -1,5 +1,6 @@
 package com.projeto.easymedico;
 
+import com.projeto.control.CadastroDeMedicos;
 import com.projeto.db.MedicoDAO;
 import com.projeto.model.Medico;
 
@@ -75,21 +76,24 @@ public class ActivityCadastrarMedico extends Activity {
 		novoMedico.setNome(this.txtNome.getText().toString());
 		novoMedico.setEspecialidade(this.txtEspecialidade.getText().toString());
 		novoMedico.setQtdPacientesPorHora(Integer.parseInt(this.txtQtdPacientesPorHora.getText().toString()));
-		novoMedico.setAgendaManha(chkAgendaManha.isChecked() ? "S" :"N");
-		novoMedico.setAgendaTarde(chkAgendaTarde.isChecked() ? "S" :"N");
+		novoMedico.setAgendaManha(chkAgendaManha.isChecked() ? "S" : "N");
+		novoMedico.setAgendaTarde(chkAgendaTarde.isChecked() ? "S" : "N");
 		novoMedico.setCrm(this.txtCrm.getText().toString());
+
+		CadastroDeMedicos cadastroDeMedicos = new CadastroDeMedicos();
+
 		try {
-			String result = MedicoDAO.inserirMedico(novoMedico);
-			if(result.equals("true")){
-				Toast.makeText(this, "Médico Cadastrado", Toast.LENGTH_SHORT).show();
-			    this.finish();
-			}	
+			if(cadastroDeMedicos.cadastrar(novoMedico,Principal.getHost()))
+				Toast.makeText(this,"Médico Cadastrado!",Toast.LENGTH_SHORT);
 			else
-				Toast.makeText(this, result, Toast.LENGTH_SHORT).show();
+				Toast.makeText(this,cadastroDeMedicos.getMsgErro(),Toast.LENGTH_SHORT);
+
+			finish();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-		} 
+		}
+
+
 	}
 
 

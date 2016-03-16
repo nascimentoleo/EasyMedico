@@ -49,10 +49,10 @@ public class BuscarMedicoTask extends AsyncTask<String, Void, Boolean> {
 	protected Boolean doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		try {
-			// Envio a requisição HTTP contendo a ação e o envelope
+			// Envio a requisiÃ§Ã£o HTTP contendo a aï¿½ï¿½o e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			// Aqui farei uma tentativa de pegar um vetor, caso de erro
-			// significa que o retorno é somente um objeto
+			// significa que o retorno ï¿½ somente um objeto
 			// foi a melhor maneira que encontrei de resolver o problema
 			Vector<SoapObject> vetorRespostas;
 			try {
@@ -85,7 +85,7 @@ public class BuscarMedicoTask extends AsyncTask<String, Void, Boolean> {
 
 				}
 			} else
-				this.msgErro = "Usuário não encontrado";
+				this.msgErro = "UsuÃ¡rio nÃ£o encontrado";
 		} catch (IOException | XmlPullParserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

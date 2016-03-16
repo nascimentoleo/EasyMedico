@@ -18,5 +18,9 @@ public class Soap {
        return host.toString() + "/" + this.path + "/" + this.nome + "?wsdl";
     }
 
+    public String getNamespace() {
+        return namespace;
+    }
+
 
 }
