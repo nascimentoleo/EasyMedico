@@ -18,4 +18,8 @@ public class Host implements Serializable {
     public String toString() {
         return this.endereco + ":" + this.porta;
     }
+
+    public void setEndereco(String endereco) {
+        this.endereco = endereco;
+    }
 }

@@ -627,7 +627,7 @@ int drawable powered_by_google_dark 0x7f02009c
 int drawable powered_by_google_light 0x7f02009d
 int id LinearLayout1 0x7f0c0074
 int id action0 0x7f0c00a9
-int id action_agendamentos 0x7f0c00c2
+int id action_agendamentos 0x7f0c00c1
 int id action_bar 0x7f0c0065
 int id action_bar_activity_content 0x7f0c0000
 int id action_bar_container 0x7f0c0064
@@ -637,14 +637,14 @@ int id action_bar_subtitle 0x7f0c0049
 int id action_bar_title 0x7f0c0048
 int id action_context_bar 0x7f0c0066
 int id action_divider 0x7f0c00ad
-int id action_localizacao 0x7f0c00c1
+int id action_localizacao 0x7f0c00c0
 int id action_menu_divider 0x7f0c0002
 int id action_menu_presenter 0x7f0c0003
 int id action_mode_bar 0x7f0c0062
 int id action_mode_bar_stub 0x7f0c0061
 int id action_mode_close_button 0x7f0c004a
-int id action_remover 0x7f0c00bf
-int id action_settings 0x7f0c00be
+int id action_remover 0x7f0c00be
+int id action_settings 0x7f0c00c2
 int id activity_chooser_view_content 0x7f0c004b
 int id adjust_height 0x7f0c001d
 int id adjust_width 0x7f0c001e
@@ -669,7 +669,7 @@ int id buyButton 0x7f0c0034
 int id buy_now 0x7f0c0038
 int id buy_with 0x7f0c0039
 int id buy_with_google 0x7f0c003a
-int id cadastraMedico 0x7f0c00c0
+int id cadastraMedico 0x7f0c00bf
 int id cancel_action 0x7f0c00aa
 int id cast_notification_id 0x7f0c0004
 int id checkbox 0x7f0c005d

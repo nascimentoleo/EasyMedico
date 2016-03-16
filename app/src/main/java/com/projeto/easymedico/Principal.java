@@ -15,12 +15,11 @@ import android.widget.Toast;
 
 import com.projeto.fragment.HostDialogFragment;
 import com.projeto.model.Host;
+import com.projeto.model.IdBundle;
 
 public class Principal extends Activity implements HostDialogFragment.AoSalvarHost {
 
-	private static Host host = null;
-
-
+    private static Bundle bundleHost;
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -65,11 +64,12 @@ public class Principal extends Activity implements HostDialogFragment.AoSalvarHo
 
 	@Override
 	public void salvouHost(Host host) {
-		this.host = host;
+		this.bundleHost = new Bundle();
+		this.bundleHost.putSerializable(IdBundle.HOST.getId(), host);
 	}
 
 	private boolean existeHostCadastrado(){
-		boolean existeHost = this.host != null;
+		boolean existeHost = this.bundleHost.getSerializable(IdBundle.HOST.getId()) != null;
 		if (!existeHost)
 			Toast.makeText(this, "Faltou cadastrar o host", Toast.LENGTH_SHORT).show();
 		return existeHost;

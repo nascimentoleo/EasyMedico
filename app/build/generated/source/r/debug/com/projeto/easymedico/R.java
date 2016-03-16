@@ -2149,7 +2149,7 @@ containing a value of this type.
     public static final class id {
         public static final int LinearLayout1=0x7f0c0074;
         public static final int action0=0x7f0c00a9;
-        public static final int action_agendamentos=0x7f0c00c2;
+        public static final int action_agendamentos=0x7f0c00c1;
         public static final int action_bar=0x7f0c0065;
         public static final int action_bar_activity_content=0x7f0c0000;
         public static final int action_bar_container=0x7f0c0064;
@@ -2159,14 +2159,14 @@ containing a value of this type.
         public static final int action_bar_title=0x7f0c0048;
         public static final int action_context_bar=0x7f0c0066;
         public static final int action_divider=0x7f0c00ad;
-        public static final int action_localizacao=0x7f0c00c1;
+        public static final int action_localizacao=0x7f0c00c0;
         public static final int action_menu_divider=0x7f0c0002;
         public static final int action_menu_presenter=0x7f0c0003;
         public static final int action_mode_bar=0x7f0c0062;
         public static final int action_mode_bar_stub=0x7f0c0061;
         public static final int action_mode_close_button=0x7f0c004a;
-        public static final int action_remover=0x7f0c00bf;
-        public static final int action_settings=0x7f0c00be;
+        public static final int action_remover=0x7f0c00be;
+        public static final int action_settings=0x7f0c00c2;
         public static final int activity_chooser_view_content=0x7f0c004b;
         public static final int adjust_height=0x7f0c001d;
         public static final int adjust_width=0x7f0c001e;
@@ -2191,7 +2191,7 @@ containing a value of this type.
         public static final int buy_now=0x7f0c0038;
         public static final int buy_with=0x7f0c0039;
         public static final int buy_with_google=0x7f0c003a;
-        public static final int cadastraMedico=0x7f0c00c0;
+        public static final int cadastraMedico=0x7f0c00bf;
         public static final int cancel_action=0x7f0c00aa;
         public static final int cast_notification_id=0x7f0c0004;
         public static final int checkbox=0x7f0c005d;

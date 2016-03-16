@@ -19,11 +19,12 @@ import android.widget.TextView.OnEditorActionListener;
 
 import com.projeto.easymedico.R;
 import com.projeto.model.Host;
+import com.projeto.model.IdBundle;
 
 /**
  * A simple {@link DialogFragment} subclass.
  * Activities that contain this fragment must implement the
- * {@link HostDialogFragment.OnFragmentInteractionListener} interface
+ * {@link HostDialogFragment.AoSalvarHost} interface
  * to handle interaction events.
  * Use the {@link HostDialogFragment#newInstance} factory method to
  * create an instance of this fragment.
@@ -31,7 +32,6 @@ import com.projeto.model.Host;
 public class HostDialogFragment extends DialogFragment implements OnEditorActionListener {
 
     private static final String DIALOG_TAG = "editDialog";
-    private static final String HOST = "host";
     private EditText edHost;
     private Host host;
 
@@ -49,7 +49,7 @@ public class HostDialogFragment extends DialogFragment implements OnEditorAction
     public static HostDialogFragment newInstance(Host host) {
         HostDialogFragment dialog = new HostDialogFragment();
         Bundle args = new Bundle();
-        args.putSerializable(HOST, host);
+        args.putSerializable(IdBundle.HOST.getId(), host);
         dialog.setArguments(args);
         return dialog;
     }
@@ -57,7 +57,7 @@ public class HostDialogFragment extends DialogFragment implements OnEditorAction
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        this.host = (Host) getArguments().getSerializable(HOST);
+        this.host = (Host) getArguments().getSerializable(IdBundle.HOST.getId());
     }
 
     @Override
@@ -79,6 +79,8 @@ public class HostDialogFragment extends DialogFragment implements OnEditorAction
             if(activity instanceof AoSalvarHost){
                 if (this.host == null)
                     this.host = new Host(edHost.getText().toString());
+                else
+                    this.host.setEndereco(edHost.getText().toString());
                 AoSalvarHost listener = (AoSalvarHost) activity;
                 listener.salvouHost(this.host);
                 dismiss();
