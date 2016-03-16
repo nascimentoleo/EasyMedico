@@ -98,8 +98,8 @@ public class ActivityPaciente extends Activity implements
 
 	// Carrega as localiza��es ativas no banco e exibe no mapa
 	public void carregarLocalizacoes() {
-		LinkedList<Medico> listaMedicos = LocalizacaoMedicosDAO
-				.getLocalizacoes();
+		LocalizacaoMedicosDAO localizacaoMedicosDAO = new LocalizacaoMedicosDAO(Principal.getHost());
+		LinkedList<Medico> listaMedicos = localizacaoMedicosDAO.getLocalizacoes();
 		if(listaMedicos != null){
 			this.mapSpots = new HashMap<String, Medico>();
 			

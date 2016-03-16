@@ -48,15 +48,15 @@ public class BuscarLocalizacoesTask extends AsyncTask<String, String, Boolean> {
 	protected Boolean doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		try {
-			// Envio a requisição HTTP contendo a ação e o envelope
+			// Envio a requisiï¿½ï¿½o HTTP contendo a aï¿½ï¿½o e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			Vector<SoapObject> vectorResposta;
 			try{
 				vectorResposta = (Vector<SoapObject>) envelope
 						.getResponse();
 			}catch(Exception e){
-				//Dispará caso não seja possível fazer o cast
-				//Só acontece em situações que so há 1 registro
+				//Disparï¿½ caso nï¿½o seja possï¿½vel fazer o cast
+				//Sï¿½ acontece em situaï¿½ï¿½es que so hï¿½ 1 registro
 				vectorResposta = new Vector<SoapObject>();
 				vectorResposta.add((SoapObject) envelope.getResponse());
 			}
@@ -90,7 +90,7 @@ public class BuscarLocalizacoesTask extends AsyncTask<String, String, Boolean> {
 
 				}
 			} else
-				this.msgErro = "Não foram encontrados médicos ativos";
+				this.msgErro = "NÃ£o foram encontrados mÃ©dicos ativos";
 		} catch (IOException | XmlPullParserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

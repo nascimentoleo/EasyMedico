@@ -1,33 +1,22 @@
 package com.projeto.db;
 
-import java.io.UnsupportedEncodingException;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
-import java.util.HashMap;
 import java.util.LinkedList;
-import java.util.concurrent.ExecutionException;
 
-import org.ksoap2.SoapEnvelope;
 import org.ksoap2.serialization.SoapObject;
 import org.ksoap2.serialization.SoapSerializationEnvelope;
 
 import com.projeto.control.BuscarMedicoTask;
 import com.projeto.control.CRUDTask;
-import com.projeto.control.PrepararSOAP;
+import com.projeto.lib.PrepararSOAP;
 import com.projeto.model.Host;
 import com.projeto.model.Medico;
 import com.projeto.model.Soap;
 
-public class MedicoDAO {
-
-    private Soap soap;
-    private Host host;
+public class MedicoDAO extends DAO {
 
     public MedicoDAO(Host host) {
-        this.soap = new Soap("MedicoDAO");
-        this.host = host;
+        super("MedicoDAO", host);
     }
-
 
     public String inserirMedico(Medico medico) throws InterruptedException {
         // Para manipular o Web Service, usaremos a biblioteca do kSoap2
@@ -60,7 +49,7 @@ public class MedicoDAO {
         // S� que a partir da vers�o 9 do android, para realizar requisi��es via
         // rede precisamos de uma classe AsyncTask,
         // que vai executar essa requisi��o em uma Thread separada
-        CRUDTask tMedico = new CRUDTask(envelope, OperacaoMedicoDAO.INSERIR.getFuncao(), this.soap.getURL(this.host));
+        CRUDTask tMedico = new CRUDTask(envelope, OperacaoMedicoDAO.INSERIR.getFuncao(), this.soap.getURL());
         tMedico.execute();
 
         while (tMedico.getResposta().equals(""))
@@ -91,7 +80,7 @@ public class MedicoDAO {
         buscarSOAP.addProperty("user", user);
         SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(buscarSOAP);
         BuscarMedicoTask tMedico = new BuscarMedicoTask(envelope,
-                OperacaoMedicoDAO.BUSCAR_MEDICOS_POR_USUARIO.getFuncao(), this.soap.getURL(this.host));
+                OperacaoMedicoDAO.BUSCAR_MEDICOS_POR_USUARIO.getFuncao(), this.soap.getURL());
         tMedico.execute();
         // S� passo daqui quando terminar de executar o Task
         while (!tMedico.getResult())

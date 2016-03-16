@@ -150,16 +150,18 @@ public class ActivityMedico extends Activity {
 				.getCoordenadas().longitude));
 		localizacaoMedico.setAtivo("S");
 		localizacaoMedico.setUser(this.medico.getUser());
+		LocalizacaoMedicosDAO localizacaoMedicosDAO = new LocalizacaoMedicosDAO(Principal.getHost());
 		if (isInsert)
-			LocalizacaoMedicosDAO.inserirLocalizacao(localizacaoMedico);
+			localizacaoMedicosDAO.inserirLocalizacao(localizacaoMedico);
 		else
-			LocalizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
+			localizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
 	}
 
 	private void removerLocalizacao() {
 		LocalizacaoMedicos localizacaoMedico = this.medico.getLocalizacao();
 		localizacaoMedico.setAtivo("N");
-		LocalizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
+		LocalizacaoMedicosDAO localizacaoMedicosDAO = new LocalizacaoMedicosDAO(Principal.getHost());
+		localizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
 		Toast.makeText(this, "Localização desativada", Toast.LENGTH_SHORT)
 				.show();
 
