@@ -8,28 +8,27 @@ import org.ksoap2.serialization.SoapSerializationEnvelope;
 
 import com.projeto.control.BuscarLocalizacaoPorMedicoTask;
 import com.projeto.control.BuscarLocalizacoesTask;
-import com.projeto.control.BuscarMedicoTask;
 import com.projeto.control.CRUDTask;
+import com.projeto.lib.PrepararSOAP;
+import com.projeto.model.Host;
 import com.projeto.model.LocalizacaoMedicos;
 import com.projeto.model.Medico;
+import com.projeto.model.Soap;
 
-public class LocalizacaoMedicosDAO {
+public class LocalizacaoMedicosDAO extends DAO{
 
-	private static final String URL = "http://192.168.0.116:8080/easyMedicoWS/services/LocalizacaoMedicosDAO?wsdl";
-	private static final String NAMESPACE = "http://easymedicows.com.br";
-	private static final String INSERIR = "inserirLocalizacao";
-	private static final String ATUALIZAR = "alterarLocalizacao";
-	private static final String EXCLUIR = "excluirLocalizacaoByUser";
-	private static final String BUSCAR_LOCALIZACAO_POR_USER = "getLocalizacaoByUser";
-	private static final String BUSCAR_LOCALIZACOES = "getLocalizacaoByMedicos";
 
-	public static String inserirLocalizacao(LocalizacaoMedicos localizacao) {
+	public LocalizacaoMedicosDAO(Host host) {
+		super("LocalizacaoMedicosDAO", host);
+	}
+
+	public String inserirLocalizacao(LocalizacaoMedicos localizacao) {
 		// Para manipular o Web Service, usaremos a biblioteca do kSoap2
 		// Primeiro pegamos o namespace e qual opera��o iremos realizar
-		SoapObject inserirSOAP = new SoapObject(NAMESPACE, INSERIR);
+		SoapObject inserirSOAP = new SoapObject(this.soap.getNamespace(), OperacaoLocalizacaoDAO.INSERIR.getFuncao());
 		// Agora inserimos o objeto medico dentro de um objeto Soap. Esse objeto
 		// que ser� enviado com as informa��es da localiza��o
-		SoapObject localizacaoSOAP = new SoapObject(NAMESPACE, "localizacao");
+		SoapObject localizacaoSOAP = new SoapObject(this.soap.getNamespace(), "localizacao");
 		// Adicionamos todos os atributos como propriedades para o objeto SOAP,
 		// semelhante a uma Tabela Hash
 		localizacaoSOAP.addProperty("user", localizacao.getUser());
@@ -40,18 +39,14 @@ public class LocalizacaoMedicosDAO {
 		// para poder enviar
 		inserirSOAP.addSoapObject(localizacaoSOAP);
 
-		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-				SoapEnvelope.VER11);
-		// Adicionamos ao envelope o objeto que queremos enviar
-		envelope.setOutputSoapObject(inserirSOAP);
-		envelope.implicitTypes = true; // Flag obrigat�rio para funcionar
+		SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(inserirSOAP);
 
 		// Enviaremos via http o envelope, para isso precisamos de um objeto da
 		// classe HttpTransportSE
 		// S� que a partir da vers�o 9 do android, para realizar requisi��es via
 		// rede precisamos de uma classe AsyncTask,
 		// que vai executar essa requisi��o em uma Thread separada
-		CRUDTask tLocalizacao = new CRUDTask(envelope, INSERIR, URL);
+		CRUDTask tLocalizacao = new CRUDTask(envelope, OperacaoLocalizacaoDAO.INSERIR.getFuncao(), this.soap.getURL());
 		tLocalizacao.execute();
 
 		while (tLocalizacao.getResposta().equals(""))
@@ -61,13 +56,13 @@ public class LocalizacaoMedicosDAO {
 
 	}
 
-	public static String alterarLocalizacao(LocalizacaoMedicos localizacao) {
+	public String alterarLocalizacao(LocalizacaoMedicos localizacao) {
 		// Para manipular o Web Service, usaremos a biblioteca do kSoap2
 		// Primeiro pegamos o namespace e qual opera��o iremos realizar
-		SoapObject atualizarSOAP = new SoapObject(NAMESPACE, ATUALIZAR);
+		SoapObject atualizarSOAP = new SoapObject(this.soap.getNamespace(),  OperacaoLocalizacaoDAO.ATUALIZAR.getFuncao());
 		// Agora inserimos o objeto medico dentro de um objeto Soap. Esse objeto
 		// que ser� enviado com as informa��es da localiza��o
-		SoapObject localizacaoSOAP = new SoapObject(NAMESPACE, "localizacao");
+		SoapObject localizacaoSOAP = new SoapObject(this.soap.getNamespace(), "localizacao");
 		// Adicionamos todos os atributos como propriedades para o objeto SOAP,
 		// semelhante a uma Tabela Hash
 		localizacaoSOAP.addProperty("user", localizacao.getUser());
@@ -78,18 +73,14 @@ public class LocalizacaoMedicosDAO {
 		// para poder enviar
 		atualizarSOAP.addSoapObject(localizacaoSOAP);
 
-		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-				SoapEnvelope.VER11);
-		// Adicionamos ao envelope o objeto que queremos enviar
-		envelope.setOutputSoapObject(atualizarSOAP);
-		envelope.implicitTypes = true; // Flag obrigat�rio para funcionar
+		SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(atualizarSOAP);
 
 		// Enviaremos via http o envelope, para isso precisamos de um objeto da
 		// classe HttpTransportSE
 		// S� que a partir da vers�o 9 do android, para realizar requisi��es via
 		// rede precisamos de uma classe AsyncTask,
 		// que vai executar essa requisi��o em uma Thread separada
-		CRUDTask tLocalizacao = new CRUDTask(envelope, ATUALIZAR, URL);
+		CRUDTask tLocalizacao = new CRUDTask(envelope, OperacaoLocalizacaoDAO.ATUALIZAR.getFuncao(), this.soap.getURL());
 		tLocalizacao.execute();
 
 		while (tLocalizacao.getResposta().equals(""))
@@ -104,16 +95,12 @@ public class LocalizacaoMedicosDAO {
 
 	}
 
-	public static LinkedList<Medico> getLocalizacoes() {
-		SoapObject buscarSOAP = new SoapObject(NAMESPACE,
-				BUSCAR_LOCALIZACOES);
-		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-				SoapEnvelope.VER11);
-		// Adicionamos ao envelope o objeto que queremos enviar
-		envelope.setOutputSoapObject(buscarSOAP);
-		envelope.implicitTypes = true;
+	public LinkedList<Medico> getLocalizacoes() {
+		SoapObject buscarSOAP = new SoapObject(this.soap.getNamespace(),
+				OperacaoLocalizacaoDAO.BUSCAR_LOCALIZACOES.getFuncao());
+		SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(buscarSOAP);
 		BuscarLocalizacoesTask tLocalizacao = new BuscarLocalizacoesTask(
-				envelope, BUSCAR_LOCALIZACOES, URL);
+				envelope, OperacaoLocalizacaoDAO.BUSCAR_LOCALIZACOES.getFuncao(), this.soap.getURL());
 		tLocalizacao.execute();
 		// S� passo daqui quando terminar de executar o Task
 		while (!tLocalizacao.getResult())
@@ -126,17 +113,13 @@ public class LocalizacaoMedicosDAO {
 
 	}
 
-	public static LocalizacaoMedicos getLocalizacaoByUser(String user) {
-		SoapObject buscarSOAP = new SoapObject(NAMESPACE,
-				BUSCAR_LOCALIZACAO_POR_USER);
+	public LocalizacaoMedicos getLocalizacaoByUser(String user) {
+		SoapObject buscarSOAP = new SoapObject(this.soap.getNamespace(),
+				OperacaoLocalizacaoDAO.BUSCAR_LOCALIZACAO_POR_USUARIO.getFuncao());
 		buscarSOAP.addProperty("user", user);
-		SoapSerializationEnvelope envelope = new SoapSerializationEnvelope(
-				SoapEnvelope.VER11);
-		// Adicionamos ao envelope o objeto que queremos enviar
-		envelope.setOutputSoapObject(buscarSOAP);
-		envelope.implicitTypes = true;
+		SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(buscarSOAP);
 		BuscarLocalizacaoPorMedicoTask tLocalizacao = new BuscarLocalizacaoPorMedicoTask(
-				envelope, BUSCAR_LOCALIZACAO_POR_USER, URL);
+				envelope, OperacaoLocalizacaoDAO.BUSCAR_LOCALIZACAO_POR_USUARIO.getFuncao(), this.soap.getURL());
 		tLocalizacao.execute();
 		// S� passo daqui quando terminar de executar o Task
 		while (!tLocalizacao.getResult())

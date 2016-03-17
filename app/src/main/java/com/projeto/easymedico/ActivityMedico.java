@@ -5,12 +5,10 @@ import java.util.Date;
 import java.util.LinkedList;
 
 import com.projeto.adapter.AgendamentoAdapter;
+import com.projeto.control.ControleDeAgendamentos;
+import com.projeto.control.ControleDeLocalizacoes;
 import com.projeto.control.Localizacao;
-import com.projeto.db.AgendamentoDAO;
-import com.projeto.db.LocalizacaoMedicosDAO;
-import com.projeto.lib.IMEI;
 import com.projeto.model.Agendamento;
-import com.projeto.model.LocalizacaoMedicos;
 import com.projeto.model.Medico;
 
 import android.app.Activity;
@@ -33,6 +31,8 @@ public class ActivityMedico extends Activity {
 	protected Localizacao loc;
 	private EditText edDataBuscaAgendamento;
 	private ListView listAgendamentos;
+	private ControleDeLocalizacoes controleDeLocalizacoes;
+    private ControleDeAgendamentos controleDeAgendamentos;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -51,8 +51,12 @@ public class ActivityMedico extends Activity {
 		String currentDateTimeString = DateFormat.getDateInstance().format(
 				new Date());
 		this.edDataBuscaAgendamento.setText(currentDateTimeString);
+        this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
+        this.controleDeLocalizacoes = new ControleDeLocalizacoes(Principal.getHost());
 		this.carregarAgendamentos(null);
-		
+
+
+
 	}
 
 	@Override
@@ -95,6 +99,7 @@ public class ActivityMedico extends Activity {
 
 		alertBuilder.setPositiveButton("Sim", new OnClickListener() {
 
+<<<<<<< HEAD
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
@@ -129,47 +134,54 @@ public class ActivityMedico extends Activity {
 				}
 			}
 		});
+=======
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                if (loc == null)
+                    loc = new Localizacao(ActivityMedico.this);
+                if (localizacaoAtiva) {
+                    loc.desativarLocalizacao();
+                    localizacaoAtiva = false;
+                    menu.getItem(0).setIcon(R.drawable.ic_action_spot_off);
+                    if (controleDeLocalizacoes.removerLocalizacao(medico))
+                        Toast.makeText(ActivityMedico.this, "Localização desativada", Toast.LENGTH_SHORT)
+                                .show();
+                } else {
+                    loc.ativarLocalizacao();
+                    localizacaoAtiva = true;
+                    menu.getItem(0).setIcon(R.drawable.ic_action_spot);
+                    // Aqui utilizarei uma thread porque demora um pouco para
+                    // pegar as coordenadas
+                    // Ent�o deixo rodando a thread, assim que o gps pegar as
+                    // coordenadas, insiro no banco
+                    // e a thread eh finalizada
+                    new Thread() {
+                        public void run() {
+                            while (loc.getCoordenadas() == null)
+                                continue;
+                            controleDeLocalizacoes.inserirLocalizacao(medico, loc.getCoordenadas());
+
+                        }
+
+                    }.start();
+                    Toast.makeText(ActivityMedico.this, "Localização Ativada",
+                            Toast.LENGTH_SHORT).show();
+
+                }
+            }
+        });
+>>>>>>> iss01
 		alertBuilder.setNegativeButton("Não", null);
 		alertBuilder.create().show();
 
 	}
 
-	// Fun��o que atualiza a localiza��o do m�dico, passando as novas
-	// coordenadas e alterando o status
-	protected void inserirLocalizacao() {
-		boolean isInsert = false;
-		LocalizacaoMedicos localizacaoMedico = this.medico.getLocalizacao();
-		if (localizacaoMedico == null) {
-			localizacaoMedico = new LocalizacaoMedicos();
-			isInsert = true;
-		}
-
-		localizacaoMedico
-				.setLatitude(Double.toString(this.loc.getCoordenadas().latitude));
-		localizacaoMedico.setLongitude(Double.toString(this.loc
-				.getCoordenadas().longitude));
-		localizacaoMedico.setAtivo("S");
-		localizacaoMedico.setUser(this.medico.getUser());
-		if (isInsert)
-			LocalizacaoMedicosDAO.inserirLocalizacao(localizacaoMedico);
-		else
-			LocalizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
-	}
-
-	private void removerLocalizacao() {
-		LocalizacaoMedicos localizacaoMedico = this.medico.getLocalizacao();
-		localizacaoMedico.setAtivo("N");
-		LocalizacaoMedicosDAO.alterarLocalizacao(localizacaoMedico);
-		Toast.makeText(this, "Localização desativada", Toast.LENGTH_SHORT)
-				.show();
-
-	}
-
 	public void carregarAgendamentos(View v) {
 		if (!edDataBuscaAgendamento.getText().toString().equals("")) {
-			LinkedList<Agendamento> listaAgendamentos = AgendamentoDAO
-					.getAgendamentosPorMedicoData(medico.getUser(),
-							edDataBuscaAgendamento.getText().toString());
+            LinkedList<Agendamento> listaAgendamentos = this.controleDeAgendamentos.getAgendamentos(medico,
+                    edDataBuscaAgendamento.getText().toString());
+
 			if (listaAgendamentos != null) {
 				AgendamentoAdapter adapter = new AgendamentoAdapter(this,
 						listaAgendamentos);

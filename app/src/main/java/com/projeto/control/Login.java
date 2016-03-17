@@ -4,36 +4,41 @@ import java.io.Serializable;
 
 import com.projeto.db.LocalizacaoMedicosDAO;
 import com.projeto.db.MedicoDAO;
+import com.projeto.easymedico.Principal;
 import com.projeto.model.Host;
 import com.projeto.model.Medico;
 
 public class Login implements Serializable {
 
-	private String msgErro = "";
+    private String msgErro;
 
-	public String getMsgErro() {
-		return this.msgErro;
-	}
+    private MedicoDAO medicoDAO;
+    private LocalizacaoMedicosDAO localizacaoMedicosDAO;
 
-	public Medico realizarLogin(String user, String password, Host host) {
-		MedicoDAO medicoDAO = new MedicoDAO(host);
-		Medico medico = medicoDAO.getMedicoByUser(user);
-		// Se pegou um m�dico
-		if (medico != null) {
-			if (medico.getPassword().equals(password)) {
-				// Pego a localizacao caso haja
-				medico.setLocalizacao(LocalizacaoMedicosDAO
-						.getLocalizacaoByUser(user));
-				return medico;
-			}
+    public Login(Host host) {
+        this.medicoDAO = new MedicoDAO(host);
+        this.localizacaoMedicosDAO = new LocalizacaoMedicosDAO(host);
+    }
 
-			else
-				this.msgErro = "Senha incorreta";
-		} else
-			this.msgErro = "Não foi encontrado usuário no banco";
+    public String getMsgErro() {
+        return this.msgErro;
+    }
 
-		return null;
+    public Medico realizarLogin(String user, String password) {
+        Medico medico = this.medicoDAO.getMedicoByUser(user);
+        // Se pegou um m�dico
+        if (medico != null) {
+            if (medico.getPassword().equals(password)) {
+                // Pego a localizacao caso haja
+                medico.setLocalizacao(this.localizacaoMedicosDAO.getLocalizacaoByUser(user));
+                return medico;
+            } else
+                this.msgErro = "Senha incorreta";
+        } else
+            this.msgErro = "Não foi encontrado usuário no banco";
 
-	}
+        return null;
+
+    }
 
 }

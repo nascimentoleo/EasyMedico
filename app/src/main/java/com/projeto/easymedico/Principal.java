@@ -77,7 +77,7 @@ public class Principal extends Activity implements HostDialogFragment.AoSalvarHo
 
 	}
 
-	public static Host getHost(){
+	static Host getHost(){
 		return host;
 	}
 }

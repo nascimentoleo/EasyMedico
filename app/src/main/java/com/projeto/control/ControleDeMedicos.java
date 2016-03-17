@@ -10,13 +10,17 @@ import com.projeto.model.Medico;
 /**
  * Created by leo on 16/03/16.
  */
-public class CadastroDeMedicos {
+public class ControleDeMedicos {
 
     private String msgErro;
+    private MedicoDAO medicoDAO;
 
-    public boolean cadastrar(Medico medico, Host host) throws InterruptedException {
-        MedicoDAO medicoDAO = new MedicoDAO(Principal.getHost());
-        String result = medicoDAO.inserirMedico(medico);
+    public ControleDeMedicos(Host host) {
+        this.medicoDAO = new MedicoDAO(host);
+    }
+
+    public boolean cadastrar(Medico medico) throws InterruptedException {
+         String result = this.medicoDAO.inserirMedico(medico);
 
         if (!result.equals("true")) {
             msgErro = result;

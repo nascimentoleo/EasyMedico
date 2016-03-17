@@ -3,7 +3,7 @@ package com.projeto.easymedico;
 import java.util.LinkedList;
 
 import com.projeto.adapter.PacienteAgendamentoAdapter;
-import com.projeto.db.AgendamentoDAO;
+import com.projeto.control.ControleDeAgendamentos;
 import com.projeto.model.Agendamento;
 
 import android.app.Activity;
@@ -22,6 +22,8 @@ public class ActivityPacienteAgendamentos extends Activity implements
 
 	private ListView listaPacientesAgendamentos;
 	private String imei;
+    private ControleDeAgendamentos controleDeAgendamentos;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -30,6 +32,7 @@ public class ActivityPacienteAgendamentos extends Activity implements
 		this.listaPacientesAgendamentos = (ListView) findViewById(R.id.listaPacientesAgendamentos);
 		this.listaPacientesAgendamentos.setOnItemClickListener(this);
 		this.imei = getIntent().getExtras().getString("imei");
+        this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
 	}
 
 	@Override
@@ -75,7 +78,7 @@ public class ActivityPacienteAgendamentos extends Activity implements
 	public void carregarAgendamentos(){
 		// Pego o imei pelo bundle
 		if(!this.imei.equals("")){
-			LinkedList<Agendamento> listaAgendamentos = AgendamentoDAO.getAgendamentosPorIMEI(this.imei);
+			LinkedList<Agendamento> listaAgendamentos = this.controleDeAgendamentos.getAgendamentos(this.imei);
 			if(listaAgendamentos != null){
 				PacienteAgendamentoAdapter adapter = new PacienteAgendamentoAdapter(this,listaAgendamentos, Principal.getHost());
 				this.listaPacientesAgendamentos.setAdapter(adapter);

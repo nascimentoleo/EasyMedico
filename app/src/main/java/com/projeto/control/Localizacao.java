@@ -25,7 +25,7 @@ public class Localizacao implements LocationListener {
 	private LatLng coordenadas;
 	private Context ctx;
 	private LocationManager locationManager;
-	// Flag de controle para dar o zoom automático no momento que carregar novas
+	// Flag de controle para dar o zoom automatico no momento que carregar novas
 	// coordenadas
 	private boolean zoomAutomatico;
 	private GoogleMap mapa;
@@ -60,7 +60,7 @@ public class Localizacao implements LocationListener {
 	}
 
 	public void ativarLocalizacao() {
-		// Verifica se o provider está ativo está ativo
+		// Verifica se o provider esta ativo
 		// Ativo caso esteja desativado
 		if (!this.IsEnabled()) {
 			this.ligarGPS();
@@ -70,7 +70,7 @@ public class Localizacao implements LocationListener {
 	}
 
 	public void desativarLocalizacao() {
-		// Verifica se o provider está ativo está ativo
+		// Verifica se o provider esta ativo
 		// Desativo caso esteja ativado
 		if (this.IsEnabled()) {
 			locationManager.removeUpdates(this);
@@ -87,7 +87,7 @@ public class Localizacao implements LocationListener {
 	}
 
 	public void zoomMap(GoogleMap map) {
-		// Move a câmera para as coordenadas da classe
+		// Move a cï¿½mera para as coordenadas da classe
 		 Criteria criteria = new Criteria();
          Location location = locationManager.getLastKnownLocation(locationManager.getBestProvider(criteria, true));
          if (location != null)
@@ -113,10 +113,10 @@ public class Localizacao implements LocationListener {
 		if (location != null) {
 			this.coordenadas = new LatLng(location.getLatitude(),
 					location.getLongitude());
-			// Se o zoom automático está habilitado, do o zoom
+			// Se o zoom automatico esta habilitado, do o zoom
 			if (this.zoomAutomatico) {
 				this.zoomMap(mapa);
-				//Marca a posição do celular no mapa
+				//Marca a posicao do celular no mapa
 				this.mapa.getUiSettings().setMyLocationButtonEnabled(true);
 		        this.mapa.getUiSettings().setCompassEnabled(true); 
 		        this.mapa.setMyLocationEnabled(true);

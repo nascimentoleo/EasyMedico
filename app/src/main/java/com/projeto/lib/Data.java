@@ -12,10 +12,10 @@ public class Data {
 		df.setLenient (false); // aqui o pulo do gato  
 		try {  
 		    df.parse (data); 
-		    // data válida  
+		    // data valida
 		    return true;
 		} catch (ParseException ex) {  
-		   // data inválida
+		   // data invalida
 			return false;
 		} 
 	}
