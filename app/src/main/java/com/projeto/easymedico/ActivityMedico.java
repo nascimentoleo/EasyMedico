@@ -99,42 +99,6 @@ public class ActivityMedico extends Activity {
 
 		alertBuilder.setPositiveButton("Sim", new OnClickListener() {
 
-<<<<<<< HEAD
-			@Override
-			public void onClick(DialogInterface dialog, int which) {
-				// TODO Auto-generated method stub
-				if (loc == null)
-					loc = new Localizacao(ActivityMedico.this);
-				if (localizacaoAtiva) {
-					loc.desativarLocalizacao();
-					localizacaoAtiva = false;
-					menu.getItem(0).setIcon(R.drawable.ic_action_spot_off);
-					removerLocalizacao();
-				} else {
-					loc.ativarLocalizacao();
-					localizacaoAtiva = true;
-					menu.getItem(0).setIcon(R.drawable.ic_action_spot);
-					// Aqui utilizarei uma thread porque demora um pouco para
-					// pegar as coordenadas
-					// Ent�o deixo rodando a thread, assim que o gps pegar as
-					// coordenadas, insiro no banco
-					// e a thread eh finalizada
-					new Thread() {
-						public void run() {
-							while (loc.getCoordenadas() == null)
-								continue;
-							inserirLocalizacao();
-
-						}
-
-					}.start();
-					Toast.makeText(ActivityMedico.this, "Localização Ativada",
-							Toast.LENGTH_SHORT).show();
-
-				}
-			}
-		});
-=======
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 // TODO Auto-generated method stub
@@ -153,7 +117,7 @@ public class ActivityMedico extends Activity {
                     menu.getItem(0).setIcon(R.drawable.ic_action_spot);
                     // Aqui utilizarei uma thread porque demora um pouco para
                     // pegar as coordenadas
-                    // Ent�o deixo rodando a thread, assim que o gps pegar as
+                    // Entao deixo rodando a thread, assim que o gps pegar as
                     // coordenadas, insiro no banco
                     // e a thread eh finalizada
                     new Thread() {
