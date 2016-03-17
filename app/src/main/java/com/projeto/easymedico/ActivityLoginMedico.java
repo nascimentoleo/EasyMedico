@@ -20,6 +20,7 @@ public class ActivityLoginMedico extends Activity {
 
 	private EditText edLoginUser;
 	private EditText edLoginPassword;
+	private Login login;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,7 @@ public class ActivityLoginMedico extends Activity {
 		getActionBar().setDisplayHomeAsUpEnabled(true);
 		this.edLoginUser = (EditText) findViewById(R.id.edLoginUser);
 		this.edLoginPassword = (EditText) findViewById(R.id.edLoginSenha);
+		this.login = new Login(Principal.getHost());
 	}
 
 	@Override
@@ -45,22 +47,21 @@ public class ActivityLoginMedico extends Activity {
 		int id = item.getItemId();
 		Intent it = null;
 		switch (id) {
-		case R.id.cadastraMedico:
-			it = new Intent(this, ActivityCadastrarMedico.class);
-			startActivity(it);
-			break;
+			case R.id.cadastraMedico:
+				it = new Intent(this, ActivityCadastrarMedico.class);
+				startActivity(it);
+				break;
 
 		}
 		return super.onOptionsItemSelected(item);
 	}
 
 	public void realizarLogin(View v) {
-		Login login = new Login();
 		//Valido se os campos est�o vazios
 		if (!edLoginUser.getText().toString().equals("")) {
 			if (!edLoginPassword.getText().toString().equals("")) {
-				Medico medico = login.realizarLogin(edLoginUser.getText()
-						.toString(), edLoginPassword.getText().toString(), Principal.getHost());
+				Medico medico = this.login.realizarLogin(edLoginUser.getText()
+						.toString(), edLoginPassword.getText().toString());
 				if (medico != null) {
 					Toast.makeText(this, "Bem vindo " + medico.getNome(),
 							Toast.LENGTH_SHORT).show();

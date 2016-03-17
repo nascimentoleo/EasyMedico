@@ -38,7 +38,7 @@ public class CRUDTask extends AsyncTask<String, String, Boolean> {
 	protected Boolean doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		try {
-			// Envio a requisição HTTP contendo a ação e o envelope
+			// Envio a requisicao HTTP contendo a acao e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			// Pego a resposta
 			SoapPrimitive resposta = (SoapPrimitive) envelope.getResponse();

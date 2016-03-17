@@ -4,24 +4,19 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.Map;
 
-import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.GoogleMap.OnInfoWindowClickListener;
-import com.google.android.gms.maps.GoogleMap.OnMarkerClickListener;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
+import com.projeto.control.ControleDeLocalizacoes;
 import com.projeto.control.Localizacao;
-import com.projeto.db.LocalizacaoMedicosDAO;
 import com.projeto.lib.IMEI;
 import com.projeto.model.Medico;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -32,8 +27,9 @@ public class ActivityPaciente extends Activity implements
 	private LatLng coordenadas;
 	private GoogleMap mapaFragmento;
 	private Localizacao loc;
-	private Map<String, Medico> mapSpots; // Tabela hash que ir� guardar os
-											// id dos spots gerados e pra qual
+    private ControleDeLocalizacoes controleDeLocalizacoes;
+	private Map<String, Medico> mapSpots;   // Tabela hash que ir� guardar os
+	          								// id dos spots gerados e pra qual
 											// m�dico
 											// pertence
 
@@ -49,8 +45,9 @@ public class ActivityPaciente extends Activity implements
 		// mapa
 		this.loc = new Localizacao(this, true, mapaFragmento);
 		mapaFragmento.setOnInfoWindowClickListener(this);
-
+        this.controleDeLocalizacoes = new ControleDeLocalizacoes(Principal.getHost());
 		this.carregarLocalizacoes();
+
 
 	}
 
@@ -98,8 +95,7 @@ public class ActivityPaciente extends Activity implements
 
 	// Carrega as localiza��es ativas no banco e exibe no mapa
 	public void carregarLocalizacoes() {
-		LocalizacaoMedicosDAO localizacaoMedicosDAO = new LocalizacaoMedicosDAO(Principal.getHost());
-		LinkedList<Medico> listaMedicos = localizacaoMedicosDAO.getLocalizacoes();
+		LinkedList<Medico> listaMedicos = this.controleDeLocalizacoes.getLocalizacoes();
 		if(listaMedicos != null){
 			this.mapSpots = new HashMap<String, Medico>();
 			

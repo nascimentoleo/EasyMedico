@@ -154,7 +154,7 @@ public class AgendamentoDAO extends DAO {
         buscarSOAP.addProperty("data", data);
         SoapSerializationEnvelope envelope = PrepararSOAP.envelopar(buscarSOAP);
         BuscarHorariosAgendamentosTask tHorarios = new BuscarHorariosAgendamentosTask(
-                envelope, OperacaoAgendamentoDAO.BUSCAR_HORARIOS.getFuncao(), this.soap.getNamespace());
+                envelope, OperacaoAgendamentoDAO.BUSCAR_HORARIOS.getFuncao(), this.soap.getURL());
         tHorarios.execute();
         // S� passo daqui quando terminar de executar o Task
         while (!tHorarios.getResult())

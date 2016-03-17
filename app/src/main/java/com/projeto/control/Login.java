@@ -12,19 +12,25 @@ public class Login implements Serializable {
 
     private String msgErro;
 
+    private MedicoDAO medicoDAO;
+    private LocalizacaoMedicosDAO localizacaoMedicosDAO;
+
+    public Login(Host host) {
+        this.medicoDAO = new MedicoDAO(host);
+        this.localizacaoMedicosDAO = new LocalizacaoMedicosDAO(host);
+    }
+
     public String getMsgErro() {
         return this.msgErro;
     }
 
-    public Medico realizarLogin(String user, String password, Host host) {
-        MedicoDAO medicoDAO = new MedicoDAO(host);
-        Medico medico = medicoDAO.getMedicoByUser(user);
+    public Medico realizarLogin(String user, String password) {
+        Medico medico = this.medicoDAO.getMedicoByUser(user);
         // Se pegou um m�dico
         if (medico != null) {
             if (medico.getPassword().equals(password)) {
                 // Pego a localizacao caso haja
-                LocalizacaoMedicosDAO localizacaoMedicosDAO = new LocalizacaoMedicosDAO(Principal.getHost());
-                medico.setLocalizacao(localizacaoMedicosDAO.getLocalizacaoByUser(user));
+                medico.setLocalizacao(this.localizacaoMedicosDAO.getLocalizacaoByUser(user));
                 return medico;
             } else
                 this.msgErro = "Senha incorreta";

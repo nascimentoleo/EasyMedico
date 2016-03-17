@@ -49,14 +49,14 @@ public class BuscarHorariosAgendamentosTask extends
 	protected Boolean doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		try {
-			// Envio a requisição HTTP contendo a ação e o envelope
+			// Envio a requisicao HTTP contendo a acao e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			Vector<SoapObject> vectorResposta;
 			try {
 				vectorResposta = (Vector<SoapObject>) envelope.getResponse();
 			} catch (Exception e) {
-				// Dispará caso não seja possível fazer o cast
-				// Só acontece em situações que so há 1 registro
+				// Dispara caso nao seja possivel fazer o cast
+				// So acontece em situacoes que so ha 1 registro
 				vectorResposta = new Vector<SoapObject>();
 				vectorResposta.add((SoapObject) envelope.getResponse());
 			}
@@ -67,7 +67,7 @@ public class BuscarHorariosAgendamentosTask extends
 					this.listHorarios.add(new Horario(resposta.getProperty("hora").toString()));
 				}
 			} else
-				this.msgErro = "Não foram encontrados horários";
+				this.msgErro = "NÃ£o foram encontrados horÃ¡rios";
 		} catch (IOException | XmlPullParserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

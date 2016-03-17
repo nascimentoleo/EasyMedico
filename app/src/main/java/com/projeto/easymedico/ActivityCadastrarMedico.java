@@ -1,28 +1,15 @@
 package com.projeto.easymedico;
 
-import com.projeto.control.CadastroDeMedicos;
-import com.projeto.db.MedicoDAO;
+import com.projeto.control.ControleDeMedicos;
 import com.projeto.model.Medico;
-
-
-
-
-
-
-
-
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.CheckBox;
 import android.widget.EditText;
-import android.widget.RadioGroup;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemSelectedListener;
 
 public class ActivityCadastrarMedico extends Activity {
 	
@@ -34,6 +21,8 @@ public class ActivityCadastrarMedico extends Activity {
 	private EditText txtCrm;
 	private CheckBox chkAgendaManha;
 	private CheckBox chkAgendaTarde;
+	private ControleDeMedicos controleDeMedicos;
+
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -48,6 +37,7 @@ public class ActivityCadastrarMedico extends Activity {
 		this.txtCrm  = (EditText) findViewById(R.id.edCRM);
 		this.chkAgendaManha = (CheckBox) findViewById(R.id.chkAgendaManha);
 		this.chkAgendaTarde = (CheckBox) findViewById(R.id.chkAgendaTarde);
+		this.controleDeMedicos = new ControleDeMedicos(Principal.getHost());
 	}
 
 	@Override
@@ -80,13 +70,11 @@ public class ActivityCadastrarMedico extends Activity {
 		novoMedico.setAgendaTarde(chkAgendaTarde.isChecked() ? "S" : "N");
 		novoMedico.setCrm(this.txtCrm.getText().toString());
 
-		CadastroDeMedicos cadastroDeMedicos = new CadastroDeMedicos();
-
 		try {
-			if(cadastroDeMedicos.cadastrar(novoMedico,Principal.getHost()))
+			if(this.controleDeMedicos.cadastrar(novoMedico))
 				Toast.makeText(this,"Médico Cadastrado!",Toast.LENGTH_SHORT).show();
 			else
-				Toast.makeText(this,cadastroDeMedicos.getMsgErro(),Toast.LENGTH_SHORT).show();
+				Toast.makeText(this, this.controleDeMedicos.getMsgErro(),Toast.LENGTH_SHORT).show();
 
 			finish();
 		} catch (InterruptedException e) {

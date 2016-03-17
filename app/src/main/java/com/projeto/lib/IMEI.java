@@ -5,7 +5,7 @@ import android.telephony.TelephonyManager;
 
 public class IMEI {
 
-	// CAPTURANDO NÚMERO DE SÉRIE DO CELULAR:
+	// CAPTURANDO NUMERO DE SERIE DO CELULAR:
 	public static String numCel(Context ctx) {
 		String IMEI = "";
 

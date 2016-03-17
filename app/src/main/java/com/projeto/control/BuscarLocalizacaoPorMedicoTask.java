@@ -49,7 +49,7 @@ public class BuscarLocalizacaoPorMedicoTask extends AsyncTask<String, Void, Bool
 	protected Boolean doInBackground(String... params) {
 		// TODO Auto-generated method stub
 		try {
-			// Envio a requisição HTTP contendo a ação e o envelope
+			// Envio a requisicao HTTP contendo a acao e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			SoapObject resposta = (SoapObject) envelope.getResponse();
 			if(resposta != null){
@@ -59,7 +59,7 @@ public class BuscarLocalizacaoPorMedicoTask extends AsyncTask<String, Void, Bool
 				this.localizacaoMedicos.setLongitude(resposta.getProperty("longitude").toString());
 				this.localizacaoMedicos.setAtivo(resposta.getProperty("ativo").toString());
 			}else
-				this.msgErro = "Médico sem localização";
+				this.msgErro = "Mï¿½dico sem localizaï¿½ï¿½o";
 		} catch (IOException | XmlPullParserException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
