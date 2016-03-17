@@ -40,12 +40,12 @@
         "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/abc_dialog_title_material.xml"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_cancel_action.xml"
-    },
-    {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/layout/activity_agendamento.xml",
         "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/layout/activity_agendamento.xml"
+    },
+    {
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/layout/notification_media_cancel_action.xml",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/res/layout/notification_media_cancel_action.xml"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/layout/fragment_dialog_host.xml",
