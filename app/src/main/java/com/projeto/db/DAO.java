@@ -10,7 +10,6 @@ public class DAO {
     Soap soap;
 
     public DAO(String nome, Host host) {
-        //this.soap = new Soap("LocalizacaoMedicosDAO", host);
         this.soap = new Soap(nome, host);
     }
 }
