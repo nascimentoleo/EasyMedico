@@ -103,12 +103,12 @@ public class ActivityMedico extends Activity {
 				if (localizacaoAtiva) {
 					loc.desativarLocalizacao();
 					localizacaoAtiva = false;
-					menu.getItem(1).setIcon(R.drawable.ic_action_spot_off);
+					menu.getItem(0).setIcon(R.drawable.ic_action_spot_off);
 					removerLocalizacao();
 				} else {
 					loc.ativarLocalizacao();
 					localizacaoAtiva = true;
-					menu.getItem(1).setIcon(R.drawable.ic_action_spot);
+					menu.getItem(0).setIcon(R.drawable.ic_action_spot);
 					// Aqui utilizarei uma thread porque demora um pouco para
 					// pegar as coordenadas
 					// Ent�o deixo rodando a thread, assim que o gps pegar as
