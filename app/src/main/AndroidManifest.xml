@@ -65,7 +65,8 @@
         <activity
             android:name=".ActivityAgendamento"
             android:label="@string/agendamento"
-            android:parentActivityName=".ActivityPaciente">
+            android:parentActivityName=".ActivityPaciente"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name=".ActivityPacienteAgendamentos"

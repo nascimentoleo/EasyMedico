@@ -2,6 +2,8 @@ package com.projeto.easymedico;
 
 import java.util.ArrayList;
 import com.projeto.control.ControleDeAgendamentos;
+import com.projeto.fragment.DataDialogFragment;
+import com.projeto.fragment.DataDialogListener;
 import com.projeto.lib.DataLib;
 import com.projeto.lib.IMEI;
 import com.projeto.model.Agendamento;
@@ -42,8 +44,16 @@ public class ActivityAgendamento extends Activity implements
         this.edDataAgendamento = (EditText) findViewById(R.id.edDataAgendamento);
         this.edTelefone = (EditText) findViewById(R.id.edTelefone);
         this.spHoraAgendamento = (Spinner) findViewById(R.id.spHoraAgendamento);
-        this.edDataAgendamento.setOnFocusChangeListener(this);
+        //this.edDataAgendamento.setOnFocusChangeListener(this);
         this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
+        this.edDataAgendamento.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DataDialogListener dataListener = new DataDialogListener(edDataAgendamento);
+                DataDialogFragment dataFrag = new DataDialogFragment(ActivityAgendamento.this, dataListener);
+                dataFrag.show();
+            }
+        });
     }
 
     @Override
@@ -52,12 +62,12 @@ public class ActivityAgendamento extends Activity implements
         super.onResume();
         Intent it = getIntent();
         Bundle parametros = it.getExtras();
-        // S� pego o m�dico se for uma inser��o
+        // So pego o medico se for uma insercao
         this.medico = (Medico) parametros.getSerializable("medico");
-        // S� pego o agendamento se for uma altera��o
+        // So pego o agendamento se for uma alteracao
         this.agendamento = (Agendamento) parametros
                 .getSerializable("agendamento");
-        // Caso seja diferente de nulo, jogo as informa��es do agendamento na
+        // Caso seja diferente de nulo, jogo as informacoes do agendamento na
         // tela
         if (this.agendamento != null) {
             this.edNomePaciente.setText(this.agendamento.getNomePaciente());
@@ -85,7 +95,7 @@ public class ActivityAgendamento extends Activity implements
             return true;
         }
         if (id == R.id.action_remover) {
-            // S� permite remover se for uma altera��o
+            // S� permite remover se for uma alteracao
             if (this.agendamento != null)
                 this.removerAgendamento();
             else
@@ -150,13 +160,13 @@ public class ActivityAgendamento extends Activity implements
                     Agendamento.setHora(spHoraAgendamento.getSelectedItem()
                             .toString());
 
-                    // Pego o IMEI, n�mero serial do celular
+                    // Pego o IMEI, numero serial do celular
                     // Com o IMEI irei relacionar os agendamentos ao dispositivo
                     Agendamento.setImei(IMEI.numCel(this));
                     String result;
-                    // Se agendamento n�o � nulo, significa que � uma altera��o
-                    // Ent�o pego o Id do agendamento e o user do agendamento
-                    // que est� sendo alterado
+                    // Se agendamento nao e nulo, significa que e uma alteracao
+                    // Entao pego o Id do agendamento e o user do agendamento
+                    // que esta sendo alterado
                     if (this.agendamento != null) {
                         Agendamento.setIdAgendamento(this.agendamento
                                 .getIdAgendamento());
@@ -193,7 +203,7 @@ public class ActivityAgendamento extends Activity implements
     }
 
     private void removerAgendamento() {
-        // Utilizaremos um alertDialog para confirmar a exclus�o
+        // Utilizaremos um alertDialog para confirmar a exclusao
         AlertDialog.Builder alertBuilder = new AlertDialog.Builder(this);
         alertBuilder.setTitle("Excluir");
         alertBuilder.setMessage("Deseja excluir esse Agendamento?");

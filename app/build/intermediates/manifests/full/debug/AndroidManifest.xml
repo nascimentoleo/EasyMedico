@@ -69,7 +69,8 @@
         <activity
             android:name="com.projeto.easymedico.ActivityAgendamento"
             android:label="@string/agendamento"
-            android:parentActivityName="com.projeto.easymedico.ActivityPaciente" >
+            android:parentActivityName="com.projeto.easymedico.ActivityPaciente"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.projeto.easymedico.ActivityPacienteAgendamentos"
