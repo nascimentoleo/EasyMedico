@@ -8,6 +8,7 @@ import com.projeto.adapter.AgendamentoAdapter;
 import com.projeto.control.ControleDeAgendamentos;
 import com.projeto.control.ControleDeLocalizacoes;
 import com.projeto.control.Localizacao;
+import com.projeto.fragment.DataFragmentListener;
 import com.projeto.model.Agendamento;
 import com.projeto.model.Medico;
 
@@ -54,8 +55,7 @@ public class ActivityMedico extends Activity {
         this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
         this.controleDeLocalizacoes = new ControleDeLocalizacoes(Principal.getHost());
 		this.carregarAgendamentos(null);
-
-
+		this.edDataBuscaAgendamento.setOnClickListener(new DataFragmentListener(getFragmentManager()));
 
 	}
 
