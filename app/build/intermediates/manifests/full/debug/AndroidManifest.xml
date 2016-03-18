@@ -53,7 +53,8 @@
         <activity
             android:name="com.projeto.easymedico.ActivityMedico"
             android:label="@string/seus_agendamentos"
-            android:parentActivityName="com.projeto.easymedico.ActivityLoginMedico" >
+            android:parentActivityName="com.projeto.easymedico.ActivityLoginMedico"
+            android:windowSoftInputMode="stateHidden" >
         </activity>
         <activity
             android:name="com.projeto.easymedico.ActivityLoginMedico"

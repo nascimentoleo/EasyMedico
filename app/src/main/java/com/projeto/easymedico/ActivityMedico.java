@@ -1,6 +1,7 @@
 package com.projeto.easymedico;
 
 import java.text.DateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.LinkedList;
 
@@ -10,6 +11,7 @@ import com.projeto.control.ControleDeLocalizacoes;
 import com.projeto.control.Localizacao;
 import com.projeto.fragment.DataDialogFragment;
 import com.projeto.fragment.DataDialogListener;
+import com.projeto.lib.DataLib;
 import com.projeto.model.Agendamento;
 import com.projeto.model.Medico;
 
@@ -52,9 +54,7 @@ public class ActivityMedico extends Activity {
 		// dia atual
 		// Para isso, pego a data corrente, jogo no EditText da data e chamo a
 		// funcao para carregar os agendamentos
-		String currentDateTimeString = DateFormat.getDateInstance().format(
-				new Date());
-		this.edDataBuscaAgendamento.setText(currentDateTimeString);
+		this.edDataBuscaAgendamento.setText(DataLib.dataAtual());
         this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
         this.controleDeLocalizacoes = new ControleDeLocalizacoes(Principal.getHost());
 		this.carregarAgendamentos(null);

@@ -2,10 +2,9 @@ package com.projeto.easymedico;
 
 import java.util.ArrayList;
 import com.projeto.control.ControleDeAgendamentos;
-import com.projeto.lib.Data;
+import com.projeto.lib.DataLib;
 import com.projeto.lib.IMEI;
 import com.projeto.model.Agendamento;
-import com.projeto.model.Horario;
 import com.projeto.model.Medico;
 
 import android.app.Activity;
@@ -103,10 +102,10 @@ public class ActivityAgendamento extends Activity implements
         // TODO Auto-generated method stub
 
         if (!hasFocus) {
-            if (Data.dataValida(edDataAgendamento.getText().toString()))
+            if (DataLib.dataValida(edDataAgendamento.getText().toString()))
                 carregarHorarios();
             else
-                Toast.makeText(this, "Data inválida", Toast.LENGTH_SHORT)
+                Toast.makeText(this, "DataLib inválida", Toast.LENGTH_SHORT)
                         .show();
         }
 
@@ -140,7 +139,7 @@ public class ActivityAgendamento extends Activity implements
 
     public void cadastrarAgendamento(View v) {
         if (!edDataAgendamento.getText().toString().equals("")
-                && (Data.dataValida(edDataAgendamento.getText().toString()))) {
+                && (DataLib.dataValida(edDataAgendamento.getText().toString()))) {
             if (!edNomePaciente.getText().toString().equals("")) {
                 if (spHoraAgendamento.getAdapter() != null) {
                     Agendamento Agendamento = new Agendamento();

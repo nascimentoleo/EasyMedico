@@ -49,7 +49,8 @@
         <activity
             android:name=".ActivityMedico"
             android:label="@string/seus_agendamentos"
-            android:parentActivityName=".ActivityLoginMedico">
+            android:parentActivityName=".ActivityLoginMedico"
+            android:windowSoftInputMode="stateHidden">
         </activity>
         <activity
             android:name=".ActivityLoginMedico"

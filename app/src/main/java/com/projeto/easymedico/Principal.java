@@ -25,7 +25,7 @@ public class Principal extends Activity implements HostDialogFragment.AoSalvarHo
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_principal);
-
+		host = new Host("192.168.0.116");
 	}
 
 	@Override
