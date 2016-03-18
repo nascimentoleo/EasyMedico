@@ -8,16 +8,19 @@ import com.projeto.adapter.AgendamentoAdapter;
 import com.projeto.control.ControleDeAgendamentos;
 import com.projeto.control.ControleDeLocalizacoes;
 import com.projeto.control.Localizacao;
-import com.projeto.fragment.DataFragmentListener;
+import com.projeto.fragment.DataDialogFragment;
+import com.projeto.fragment.DataDialogListener;
 import com.projeto.model.Agendamento;
 import com.projeto.model.Medico;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.DialogInterface.OnClickListener;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -48,14 +51,22 @@ public class ActivityMedico extends Activity {
 		// Na primeira instancia da activity, irei carregar os agendamentos do
 		// dia atual
 		// Para isso, pego a data corrente, jogo no EditText da data e chamo a
-		// fun��o para carregar os agendamentos
+		// funcao para carregar os agendamentos
 		String currentDateTimeString = DateFormat.getDateInstance().format(
 				new Date());
 		this.edDataBuscaAgendamento.setText(currentDateTimeString);
         this.controleDeAgendamentos = new ControleDeAgendamentos(Principal.getHost());
         this.controleDeLocalizacoes = new ControleDeLocalizacoes(Principal.getHost());
 		this.carregarAgendamentos(null);
-		this.edDataBuscaAgendamento.setOnClickListener(new DataFragmentListener(getFragmentManager()));
+
+		this.edDataBuscaAgendamento.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				DataDialogListener dataListener = new DataDialogListener(edDataBuscaAgendamento);
+				DataDialogFragment dataFrag = new DataDialogFragment(ActivityMedico.this, dataListener);
+				dataFrag.show();
+			}
+		});
 
 	}
 
@@ -158,4 +169,6 @@ public class ActivityMedico extends Activity {
 		this.listAgendamentos.requestFocus();
 
 	}
+
+
 }

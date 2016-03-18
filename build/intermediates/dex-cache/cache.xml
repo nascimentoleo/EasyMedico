@@ -2,18 +2,18 @@
 <items version="2" >
 
     <item
-        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
-        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-23.0.0_5044a1b0dc0773a26be91d46456a2c73d085c06c.jar" />
-    </item>
-    <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-vision/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="dfecc4d835cdabcdecf7e95f0d20a3ef1e9d8ef4">
         <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-vision-8.4.0_ae0d83b235fb11de58a0e2502d8417f269cf0509.jar" />
+    </item>
+    <item
+        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d358b3dd49a7c67844622dcbc9cf4339e13952ce">
+        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.android.support-mediarouter-v7-23.0.0_5044a1b0dc0773a26be91d46456a2c73d085c06c.jar" />
     </item>
     <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-appindexing/8.4.0/jars/classes.jar"
@@ -156,18 +156,18 @@
         <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.0.0-alpha1_6b9a2bb42bbb81e6ae5ede07338cecd231d5ba3d.jar" />
     </item>
     <item
-        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
-        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-8.4.0_2d7f46199edc6aa30afa94fbddb40d89faefb521.jar" />
-    </item>
-    <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-auth/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="966e5771a5a2ebfb31bf00d7cd6cd2546d245517">
         <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-auth-8.4.0_78efb15410c609a2ca1c7a716eae530ac7aaad22.jar" />
+    </item>
+    <item
+        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-identity/8.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b82b8e847173c28efffcd291b2a0b1ae9ad17fa4">
+        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-identity-8.4.0_2d7f46199edc6aa30afa94fbddb40d89faefb521.jar" />
     </item>
     <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/mediarouter-v7/23.0.0/jars/libs/internal_impl-23.0.0.jar"
@@ -177,18 +177,18 @@
         <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/internal_impl-23.0.0_33e98601a4bd57bdfe0ae650496712dc52c6c6f8.jar" />
     </item>
     <item
-        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
-        jumboMode="false"
-        revision="23.0.1"
-        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
-        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.0_a224af3bd141f85e881ce5bd680028e849c735d6.jar" />
-    </item>
-    <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-base/8.4.0/jars/classes.jar"
         jumboMode="false"
         revision="23.0.1"
         sha1="fef2b3e4b6b1b0e5fe7b69fa137a5fa55a3182ab">
         <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.google.android.gms-play-services-base-8.4.0_3b26d62eaac8eb4a55b8e2141c8f1496701b3e26.jar" />
+    </item>
+    <item
+        jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.0.0/jars/classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4fcf0b1879f8caf497c073e1432d398e9e2988c1">
+        <dex dex="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-23.0.0_a224af3bd141f85e881ce5bd680028e849c735d6.jar" />
     </item>
     <item
         jar="/home/leo/StudioProjects/EasyMedico/app/build/intermediates/exploded-aar/com.google.android.gms/play-services-maps/8.4.0/jars/classes.jar"

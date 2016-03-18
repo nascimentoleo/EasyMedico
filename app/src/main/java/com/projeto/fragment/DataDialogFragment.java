@@ -1,31 +1,24 @@
 package com.projeto.fragment;
 
-import android.app.DialogFragment;
+import android.app.DatePickerDialog;
 import android.app.FragmentManager;
-import android.view.KeyEvent;
-import android.widget.DatePicker;
-import android.widget.TextView;
+import android.content.Context;
+
+import java.util.Calendar;
+
 
 /**
  * Created by leo on 3/18/16.
  */
-public class DataDialogFragment extends DialogFragment implements TextView.OnEditorActionListener {
+public class DataDialogFragment extends DatePickerDialog {
 
-    private DatePicker datePicker;
-    private String data;
+    private static Calendar calendario = Calendar.getInstance();
+    private static final String DATA_DIALOG_TAG = "dataDialog";
 
-
-
-    @Override
-    public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-        return false;
-    }
-
-    public static DataDialogFragment newInstance(String hora) {
-        return null;
-    }
-
-    public void abrir(FragmentManager fragmentManager) {
+    public DataDialogFragment(Context context, OnDateSetListener callBack) {
+        super(context, callBack, calendario.get(Calendar.YEAR), calendario.get(Calendar.MONTH),
+                calendario.get(Calendar.DAY_OF_MONTH));
 
     }
+
 }
