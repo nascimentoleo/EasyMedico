@@ -135,7 +135,6 @@ public class ActivityMedico extends Activity {
                 }
             }
         });
->>>>>>> iss01
 		alertBuilder.setNegativeButton("Não", null);
 		alertBuilder.create().show();
 

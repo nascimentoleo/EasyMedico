@@ -4,27 +4,27 @@
         "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_medico.xml"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_paciente.xml",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_paciente.xml"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_cadastrar_medico.xml",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_cadastrar_medico.xml"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_agendamento.xml",
         "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_agendamento.xml"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/principal.xml",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/principal.xml"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_paciente_agendamentos.xml",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_paciente_agendamentos.xml"
     },
     {
         "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_login_medico.xml",
         "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_login_medico.xml"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_paciente_agendamentos.xml",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_paciente_agendamentos.xml"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/principal.xml",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/principal.xml"
     },
     {
-        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_cadastrar_medico.xml",
-        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_cadastrar_medico.xml"
+        "merged": "/home/leo/StudioProjects/EasyMedico/app/build/intermediates/res/merged/debug/menu/activity_paciente.xml",
+        "source": "/home/leo/StudioProjects/EasyMedico/app/src/main/res/menu/activity_paciente.xml"
     }
 ]
