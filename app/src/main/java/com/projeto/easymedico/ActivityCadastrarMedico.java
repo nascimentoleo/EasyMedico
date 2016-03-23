@@ -1,6 +1,8 @@
 package com.projeto.easymedico;
 
+import com.projeto.control.ControleDeEspecialidades;
 import com.projeto.control.ControleDeMedicos;
+import com.projeto.model.Especialidade;
 import com.projeto.model.Medico;
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,6 +12,8 @@ import android.view.View;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
+
+import java.util.LinkedList;
 
 public class ActivityCadastrarMedico extends Activity {
 	
@@ -22,6 +26,7 @@ public class ActivityCadastrarMedico extends Activity {
 	private CheckBox chkAgendaManha;
 	private CheckBox chkAgendaTarde;
 	private ControleDeMedicos controleDeMedicos;
+	private ControleDeEspecialidades controleDeEspecialidades;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +43,8 @@ public class ActivityCadastrarMedico extends Activity {
 		this.chkAgendaManha = (CheckBox) findViewById(R.id.chkAgendaManha);
 		this.chkAgendaTarde = (CheckBox) findViewById(R.id.chkAgendaTarde);
 		this.controleDeMedicos = new ControleDeMedicos(Principal.getHost());
+		this.controleDeEspecialidades = new ControleDeEspecialidades(Principal.getHost());
+        this.carregaEspecialidades();
 	}
 
 	@Override
@@ -83,6 +90,10 @@ public class ActivityCadastrarMedico extends Activity {
 
 
 	}
+
+    public void carregaEspecialidades(){
+        LinkedList<Especialidade> especialidades = this.controleDeEspecialidades.getLocalizacoes();
+    }
 
 
 }

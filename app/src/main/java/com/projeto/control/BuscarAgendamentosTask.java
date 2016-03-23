@@ -48,14 +48,14 @@ public class BuscarAgendamentosTask extends
 	@Override
 	protected Boolean doInBackground(String... params) {
 		try {
-			// Envio a requisi��o HTTP contendo a a��o e o envelope
+			// Envio a requisicao HTTP contendo a acao e o envelope
 			this.http.call("urn:" + this.acao, envelope);
 			Vector<SoapObject> vectorResposta;
 			try {
 				vectorResposta = (Vector<SoapObject>) envelope.getResponse();
 			} catch (Exception e) {
-				// Dispar� caso n�o seja poss�vel fazer o cast
-				// S� acontece em situa��es que so h� 1 registro
+				// Dispara caso nao seja possivel fazer o cast
+				// So acontece em situacoes que so ha 1 registro
 				vectorResposta = new Vector<SoapObject>();
 				vectorResposta.add((SoapObject) envelope.getResponse());
 			}
