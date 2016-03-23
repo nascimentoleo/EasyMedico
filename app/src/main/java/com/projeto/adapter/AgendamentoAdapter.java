@@ -13,6 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 public class AgendamentoAdapter extends BaseAdapter {
+
 	private Context ctx;
 	private LinkedList<Agendamento> listaAgendamentos;
 	

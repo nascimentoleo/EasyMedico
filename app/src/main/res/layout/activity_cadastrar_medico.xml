@@ -8,115 +8,123 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.easymedico.ActivityCadastrarMedico" >
+    tools:context="com.example.easymedico.ActivityCadastrarMedico"
+    android:weightSum="1">
 
-    <TextView
-        android:id="@+id/textView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/usuario" />
+        <TextView
+            android:id="@+id/textView6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/usuario" />
 
-    <EditText
-        android:id="@+id/edUser"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-    </EditText>
+        <EditText
+            android:id="@+id/edUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+        </EditText>
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/senha" />
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/senha" />
 
-    <EditText
-        android:id="@+id/edLoginSenha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal"
-        android:ems="10"
-        android:inputType="textPassword" >
-    </EditText>
+        <EditText
+            android:id="@+id/edLoginSenha"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:ems="10"
+            android:inputType="textPassword" >
+        </EditText>
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/nome" />
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/nome" />
 
-    <EditText
-        android:id="@+id/edNome"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal"
-        android:ems="10"
-        android:inputType="textPersonName" >
-    </EditText>
+        <EditText
+            android:id="@+id/edNome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:ems="10"
+            android:inputType="textPersonName" >
+        </EditText>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/especialidade" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/especialidade" />
 
-    <EditText
-        android:id="@+id/edEspecialidade"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-    </EditText>
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/crm" />
+        <!-- <EditText
+            android:id="@+id/edEspecialidade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+        </EditText> -->
 
-    <EditText
-        android:id="@+id/edCRM"
-        android:layout_width="153dp"
-        android:layout_height="wrap_content"
-        android:ems="10" >
-    </EditText>
+        <Spinner
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/spinnerEspecialidade">
+        </Spinner>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Turnos de Atendimento" />
+        <TextView
+            android:id="@+id/textView10"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/crm" />
 
-    <CheckBox
-        android:id="@+id/chkAgendaManha"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Manhã" />
+        <EditText
+            android:id="@+id/edCRM"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+        </EditText>
 
-    <CheckBox
-        android:id="@+id/chkAgendaTarde"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Tarde" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Turnos de Atendimento" />
 
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/quantidade_de_pacientes_por_hora" />
+        <CheckBox
+            android:id="@+id/chkAgendaManha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Manhã" />
 
-    <EditText
-        android:id="@+id/edQtdPacientesPorHora"
-        android:layout_width="51dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="fill_horizontal"
-        android:ems="10"
-        android:inputType="number" >
+        <CheckBox
+            android:id="@+id/chkAgendaTarde"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tarde" />
 
-    </EditText>
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/quantidade_de_pacientes_por_hora" />
 
-    <Button
-        android:id="@+id/btnCadastrar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:onClick="cadastrarMedico"
-        android:text="@string/cadastrar" />
+        <EditText
+            android:id="@+id/edQtdPacientesPorHora"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="fill_horizontal"
+            android:ems="10"
+            android:inputType="number" >
+
+        </EditText>
+
+        <Button
+            android:id="@+id/btnCadastrar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="cadastrarMedico"
+            android:text="@string/cadastrar" />
 
 </LinearLayout>
